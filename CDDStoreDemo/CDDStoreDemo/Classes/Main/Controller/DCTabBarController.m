@@ -167,7 +167,8 @@
 #pragma mark - 点击动画
 - (void)tabBarButtonClick:(UIControl *)tabBarButton
 {
-    for (UIView *imageView in tabBarButton.subviews) {
+//    for (UIView *imageView in tabBarButton.subviews) {
+    for (UIView *imageView in tabBarButton.subviews){
         if ([imageView isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
             //需要实现的帧动画,这里根据自己需求改动
             CAKeyframeAnimation *animation = [CAKeyframeAnimation animation];

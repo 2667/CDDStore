@@ -1025,7 +1025,7 @@
 				92B37E6A1FD0FBDF0045A4A5 /* MediaList(美媒榜) */,
 				18DCA2AE1F1F4186008BF67E /* Main */,
 				18DCA13C1F1F4186008BF67E /* AppDelegate */,
-				18DCA2811F1F4186008BF67E /* Home(首页) */,
+				18DCA2811F1F4186008BF67E /* Home(首页) 商城 */,
 				18DCA1761F1F4186008BF67E /* Details(商品详情) */,
 				18DCA13F1F1F4186008BF67E /* Classify(分类) */,
 				18DCA2FB1F1F4187008BF67E /* ShoppingCar(购物车) */,
@@ -1739,13 +1739,13 @@
 			path = XWMagicMoveAnimator;
 			sourceTree = "<group>";
 		};
-		18DCA2811F1F4186008BF67E /* Home(首页) */ = {
+		18DCA2811F1F4186008BF67E /* Home(首页) 商城 */ = {
 			isa = PBXGroup;
 			children = (
 				9C8CC854200495B200515926 /* Scan(扫描) */,
 				9C8CC853200495AC00515926 /* Main */,
 			);
-			path = "Home(首页)";
+			path = "Home(首页) 商城";
 			sourceTree = "<group>";
 		};
 		18DCA2821F1F4186008BF67E /* Controller */ = {

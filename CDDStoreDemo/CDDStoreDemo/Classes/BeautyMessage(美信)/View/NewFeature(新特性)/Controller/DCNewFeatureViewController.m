@@ -158,6 +158,7 @@ static NSString *const DCNewFeatureCellID = @"DCNewFeatureCell";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    NSLog(@"_imageArray.count内容是%ld",_imageArray.count);
     return _imageArray.count;
 }
 
