@@ -27,6 +27,7 @@
         _coverView = [[UIView alloc]initWithFrame:self.bounds];
         _coverView.backgroundColor = [UIColor blackColor];
         _coverView.alpha = 0.0;
+        
     }
     return _coverView;
 }

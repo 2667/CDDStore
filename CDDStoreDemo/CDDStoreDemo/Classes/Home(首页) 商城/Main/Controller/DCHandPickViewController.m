@@ -88,21 +88,34 @@ static NSString *const DCScrollAdFootViewID = @"DCScrollAdFootView";
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.frame = CGRectMake(0, 0, ScreenW, ScreenH - DCBottomTabH);
-        _collectionView.showsVerticalScrollIndicator = NO;        //注册
+//        _collectionView.frame = CGRectMake(0, 0, ScreenW, ScreenH - DCBottomTabH*2);
+        _collectionView.showsVerticalScrollIndicator = NO;
+
+        //注册
+        //下面的商品统计
         [_collectionView registerClass:[DCGoodsCountDownCell class] forCellWithReuseIdentifier:DCGoodsCountDownCellID];
+//        手拿的商品
         [_collectionView registerClass:[DCGoodsHandheldCell class] forCellWithReuseIdentifier:DCGoodsHandheldCellID];
+        //你喜欢的商品
         [_collectionView registerClass:[DCGoodsYouLikeCell class] forCellWithReuseIdentifier:DCGoodsYouLikeCellID];
+        //格子
         [_collectionView registerClass:[DCGoodsGridCell class] forCellWithReuseIdentifier:DCGoodsGridCellID];
+//        超出的家用电器
         [_collectionView registerClass:[DCExceedApplianceCell class] forCellWithReuseIdentifier:DCExceedApplianceCellID];
+        //新福利
         [_collectionView registerClass:[DCNewWelfareCell class] forCellWithReuseIdentifier:DCNewWelfareCellID];
         
-        
+//        顶部foot线
         [_collectionView registerClass:[DCTopLineFootView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:DCTopLineFootViewID];
+//         结束footview
         [_collectionView registerClass:[DCOverFootView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:DCOverFootViewID];
+//        滚动广告FootView
         [_collectionView registerClass:[DCScrollAdFootView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:DCScrollAdFootViewID];
-        
+//        你喜欢的HeadView
         [_collectionView registerClass:[DCYouLikeHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:DCYouLikeHeadViewID];
+//        幻灯展示HeadView
         [_collectionView registerClass:[DCSlideshowHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:DCSlideshowHeadViewID];
+        //下面统计headview
         [_collectionView registerClass:[DCCountDownHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:DCCountDownHeadViewID];
         
         [self.view addSubview:_collectionView];
@@ -387,6 +400,7 @@ static NSString *const DCScrollAdFootViewID = @"DCScrollAdFootView";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (indexPath.section == 0) {//10
         
         DCGoodsSetViewController *goodSetVc = [[DCGoodsSetViewController alloc] init];

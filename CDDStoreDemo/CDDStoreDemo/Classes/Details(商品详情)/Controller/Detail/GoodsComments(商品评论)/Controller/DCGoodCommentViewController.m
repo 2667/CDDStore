@@ -45,7 +45,15 @@ static NSString *const DCCommentsCntCellID = @"DCCommentsCntCell";
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.frame = CGRectMake(0, DCTopNavH, ScreenW, ScreenH - DCTopNavH - 55);
+        // 适配iphoneX 的状态栏
+        if (KIsiPhoneX) {
+              _tableView.frame = CGRectMake(0, DCTopNavH+24, ScreenW, ScreenH - DCTopNavH - 55);
+            
+        }else{
+             _tableView.frame = CGRectMake(0, DCTopNavH, ScreenW, ScreenH - DCTopNavH - 55);
+            
+        }
+      
         
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self.view addSubview:_tableView];

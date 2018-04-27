@@ -18,6 +18,7 @@
 #import "UIImageView+WebCache.h"
 
 #import "DCNewFeatureViewController.h"
+#import <EMSDK.h>
 
 @interface AppDelegate ()
 
@@ -42,10 +43,25 @@
     
     [self setUpFixiOS11]; //适配IOS 11
     
+    [self setupHUanXin];
     
     return YES;
 }
 
+//设置环信
+-(void)setupHUanXin{
+     // 环信
+    //AppKey:注册的AppKey，详细见下面注释。
+    //apnsCertName:推送证书名（不需要加后缀），详细见下面注释。
+//    EMOptions *options = [EMOptions optionsWithAppkey:@"110108007702#xingnltest"];
+//    //options.apnsCertName = @"istore_dev";
+//    [[EMClient sharedClient] initializeSDKWithOptions:options];
+    EMOptions * options = [EMOptions optionsWithAppkey:@"1128180412146140#kuailiao"];
+    [[EMClient sharedClient] initializeSDKWithOptions:options];
+    
+    
+ 
+}
 
 #pragma mark - 根控制器
 - (void)setUpRootVC
@@ -85,14 +101,21 @@
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
 }
 
-
+ // APP进入后台
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    
+//环信
+    [[EMClient sharedClient]applicationDidEnterBackground:application];
+    
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
-
+ // APP将要从后台返回
 - (void)applicationWillEnterForeground:(UIApplication *)application {
+    
+  
+    [[EMClient sharedClient] applicationWillEnterForeground:application];
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
 }
 

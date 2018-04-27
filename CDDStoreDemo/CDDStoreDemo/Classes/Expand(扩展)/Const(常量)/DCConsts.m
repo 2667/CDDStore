@@ -20,6 +20,9 @@ CGFloat const DCNaviH = 44;
 /** 底部tab高度 */
 CGFloat const DCBottomTabH = 49;
 /** 顶部Nav高度+指示器 */
-CGFloat const DCTopNavH = 64;
+ CGFloat const DCTopNavH = 64;
+
+/** t加 顶部Nav高度+指示器 */
+CGFloat DCTopNavHeight = 64;
 
 @end

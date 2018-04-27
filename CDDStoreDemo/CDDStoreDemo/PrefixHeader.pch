@@ -4,7 +4,8 @@
 //
 //  Created by Insect on 2017/5/12.
 //  Copyright © 2017年 Insect. All rights reserved.
-//
+///Users/cln/Documents/OC SourceCode/仿国美商城CDDStore/CDDStoreDemo/CDDStoreDemo/PrefixHeader.pch   CDDStoreDemo/PrefixHeader.pch
 
 #import "Headers.h"
 
+#define KIsiPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)

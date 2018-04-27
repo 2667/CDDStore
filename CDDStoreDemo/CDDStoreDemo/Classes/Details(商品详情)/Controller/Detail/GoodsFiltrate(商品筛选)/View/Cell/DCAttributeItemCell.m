@@ -49,6 +49,7 @@
     [self addSubview:_contentButton];
     _contentButton.titleLabel.font = PFR12Font;
     [_contentButton setTitleColor:[UIColor blackColor] forState:0];
+//     [_contentButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 }
 
 #pragma mark - 布局
@@ -69,6 +70,7 @@
     [_contentButton setTitle:contentItem.content forState:0];
     
     if (contentItem.isSelect) {
+        //设置打勾那个图片
         [_contentButton setImage:[UIImage imageNamed:@"isSelectYes"] forState:0];
         [_contentButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         _contentButton.backgroundColor = [UIColor whiteColor];
@@ -81,6 +83,8 @@
         _contentButton.backgroundColor = RGB(230, 230, 230);
         
         [DCSpeedy dc_chageControlCircularWith:self AndSetCornerRadius:3 SetBorderWidth:1 SetBorderColor:RGB(230, 230, 230) canMasksToBounds:YES];
+
+        
     }
 }
 

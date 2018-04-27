@@ -56,6 +56,7 @@ static NSString * const DCFooterReusableViewID = @"DCFooterReusableView";
         _collectionView.dataSource = self;
         _collectionView.alwaysBounceVertical = YES;
         _collectionView.frame = CGRectMake(5, DCMargin, FiltrateViewScreenW - DCMargin, ScreenH - 60);
+//        _collectionView.frame = CGRectMake(0, DCMargin, FiltrateViewScreenW , ScreenH - 60);
         _collectionView.showsVerticalScrollIndicator = NO;
         
         [_collectionView registerClass:[DCAttributeItemCell class] forCellWithReuseIdentifier:DCAttributeItemCellID];//cell
@@ -103,6 +104,7 @@ static NSString * const DCFooterReusableViewID = @"DCFooterReusableView";
 - (void)setUpFiltrateData
 {
     _filtrateItem = [DCFiltrateItem mj_objectArrayWithFilename:@"FiltrateItem.plist"];
+    NSLog(@"_filtrateItem内容是%@",_filtrateItem);
 }
 
 #pragma mark - 底部重置确定按钮
@@ -141,7 +143,7 @@ static NSString * const DCFooterReusableViewID = @"DCFooterReusableView";
     NSInteger oneLine = (self.filtrateItem[section].content.count >= 3) ? 3 : self.filtrateItem[section].content.count; //默认一行
     
     //这里默认第一组品牌展示两行数据其余展示一行数据（3个一行）
-    return (_filtrateItem[section].isOpen == YES) ? self.filtrateItem[section].content.count : (section == 0) ? doubleLine : oneLine ;
+    return (_filtrateItem[section].isOpen == YES) ? self.filtrateItem[section].content.count : ((section == 0) ? doubleLine : oneLine) ;
 }
 
 

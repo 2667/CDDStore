@@ -167,6 +167,7 @@
 #pragma mark - 添加子控制器
 -(void)setUpChildViewControllers
 {
+//    商品基础控制器
     WEAKSELF
     DCGoodBaseViewController *goodBaseVc = [[DCGoodBaseViewController alloc] init];
     goodBaseVc.goodTitle = _goodTitle;
@@ -188,9 +189,10 @@
     };
     [self addChildViewController:goodBaseVc];
     
+    //商品详情控制器
     DCGoodParticularsViewController *goodParticularsVc = [[DCGoodParticularsViewController alloc] init];
     [self addChildViewController:goodParticularsVc];
-    
+     //商品评论控制器
     DCGoodCommentViewController *goodCommentVc = [[DCGoodCommentViewController alloc] init];
     [self addChildViewController:goodCommentVc];
 }

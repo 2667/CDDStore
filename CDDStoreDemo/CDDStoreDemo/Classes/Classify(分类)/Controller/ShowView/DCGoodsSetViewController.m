@@ -75,7 +75,15 @@ static NSString *const DCListGridCellID = @"DCListGridCell";
     if (!_collectionView) {
         DCHoverFlowLayout *layout = [DCHoverFlowLayout new];
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-        _collectionView.frame = CGRectMake(0, DCTopNavH, ScreenW, ScreenH - DCTopNavH);
+        
+        if (KIsiPhoneX) {
+            //适配iphonex,
+           _collectionView.frame = CGRectMake(0, DCTopNavH+24, ScreenW, ScreenH - DCTopNavH);
+        }else{
+            //非iphonex的机型
+             _collectionView.frame = CGRectMake(0, DCTopNavH, ScreenW, ScreenH - DCTopNavH);
+        }
+        
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
@@ -286,11 +294,31 @@ static NSString *const DCListGridCellID = @"DCListGridCell";
     
     if(scrollView.contentOffset.y > _lastContentOffset){
         [self.navigationController setNavigationBarHidden:YES animated:YES];
-        self.collectionView.frame = CGRectMake(0, 20, ScreenW, ScreenH - 20);
+        // 适配iphoneX 的状态栏
+        if (KIsiPhoneX) {
+            //适配iphonex
+             self.collectionView.frame = CGRectMake(0, 44, ScreenW, ScreenH - 20);
+        }else{
+            //非iphonex的机型
+            _collectionView.frame = CGRectMake(0, 20, ScreenW, ScreenH - DCTopNavH);
+        }
+        
         self.view.backgroundColor = [UIColor whiteColor];
     }else{
         [self.navigationController setNavigationBarHidden:NO animated:YES];
-        self.collectionView.frame = CGRectMake(0, DCTopNavH, ScreenW, ScreenH - DCTopNavH);
+
+        
+        if (KIsiPhoneX) {
+            //适配iphonex,
+       
+         self.collectionView.frame = CGRectMake(0, DCTopNavH+24, ScreenW, ScreenH - DCTopNavH);
+            
+        }else{
+            //非iphonex的机型
+       self.collectionView.frame = CGRectMake(0, DCTopNavH, ScreenW, ScreenH - DCTopNavH);
+        }
+        
+        
         self.view.backgroundColor = DCBGColor;
     }
 }

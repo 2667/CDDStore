@@ -169,6 +169,15 @@
 		18DCA3CA1F1F4187008BF67E /* DCRecommendReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DCA3081F1F4187008BF67E /* DCRecommendReusableView.m */; };
 		18DD85C71F0650F400F47095 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18DD85C61F0650F400F47095 /* Assets.xcassets */; };
 		18F64B1B1F0E03F500DB978C /* PingFang Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F64B1A1F0E03F500DB978C /* PingFang Medium.ttf */; };
+		576968A32091D43B0037247E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 576968A22091D43B0037247E /* libsqlite3.tbd */; };
+		576968A52091D4490037247E /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 576968A42091D4490037247E /* libstdc++.6.0.9.tbd */; };
+		576968A72091D4640037247E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 576968A62091D4640037247E /* libz.tbd */; };
+		576968A92091D47B0037247E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 576968A82091D47B0037247E /* libc++.tbd */; };
+		576968AB2091D48D0037247E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576968AA2091D48D0037247E /* ImageIO.framework */; };
+		576968AD2091D49C0037247E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576968AC2091D49C0037247E /* MobileCoreServices.framework */; };
+		576968AF2091D4A80037247E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576968AE2091D4A80037247E /* AVFoundation.framework */; };
+		576968B02091D4B40037247E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576968A02091D4140037247E /* AudioToolbox.framework */; };
+		576968B12091D4BF0037247E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5769689E2091D4030037247E /* CoreMedia.framework */; };
 		92565C041FD7E42E00828060 /* DCObjManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92565C021FD7E42D00828060 /* DCObjManager.m */; };
 		92565C071FD7ECE500828060 /* DCNotificationCenterName.m in Sources */ = {isa = PBXBuildFile; fileRef = 92565C061FD7ECE500828060 /* DCNotificationCenterName.m */; };
 		925B5F011FCD529B00053A16 /* DCTitleRolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 925B5EFE1FCD529B00053A16 /* DCTitleRolling.m */; };
@@ -621,6 +630,15 @@
 		18DD85C61F0650F400F47095 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18DD85C81F06512100F47095 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		18F64B1A1F0E03F500DB978C /* PingFang Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PingFang Medium.ttf"; sourceTree = "<group>"; };
+		5769689E2091D4030037247E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		576968A02091D4140037247E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		576968A22091D43B0037247E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		576968A42091D4490037247E /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		576968A62091D4640037247E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		576968A82091D47B0037247E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		576968AA2091D48D0037247E /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		576968AC2091D49C0037247E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		576968AE2091D4A80037247E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		92565C021FD7E42D00828060 /* DCObjManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCObjManager.m; sourceTree = "<group>"; };
 		92565C031FD7E42E00828060 /* DCObjManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCObjManager.h; sourceTree = "<group>"; };
 		92565C051FD7ECE500828060 /* DCNotificationCenterName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCNotificationCenterName.h; sourceTree = "<group>"; };
@@ -852,6 +870,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				576968B12091D4BF0037247E /* CoreMedia.framework in Frameworks */,
+				576968B02091D4B40037247E /* AudioToolbox.framework in Frameworks */,
+				576968AF2091D4A80037247E /* AVFoundation.framework in Frameworks */,
+				576968AD2091D49C0037247E /* MobileCoreServices.framework in Frameworks */,
+				576968AB2091D48D0037247E /* ImageIO.framework in Frameworks */,
+				576968A92091D47B0037247E /* libc++.tbd in Frameworks */,
+				576968A72091D4640037247E /* libz.tbd in Frameworks */,
+				576968A52091D4490037247E /* libstdc++.6.0.9.tbd in Frameworks */,
+				576968A32091D43B0037247E /* libsqlite3.tbd in Frameworks */,
 				B4BD6CD985407C4066CE3D78 /* libPods-CDDStoreDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2690,6 +2717,15 @@
 		FCDD3FF9C2C0B568BD8C276D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				576968AE2091D4A80037247E /* AVFoundation.framework */,
+				576968AC2091D49C0037247E /* MobileCoreServices.framework */,
+				576968AA2091D48D0037247E /* ImageIO.framework */,
+				576968A82091D47B0037247E /* libc++.tbd */,
+				576968A62091D4640037247E /* libz.tbd */,
+				576968A42091D4490037247E /* libstdc++.6.0.9.tbd */,
+				576968A22091D43B0037247E /* libsqlite3.tbd */,
+				576968A02091D4140037247E /* AudioToolbox.framework */,
+				5769689E2091D4030037247E /* CoreMedia.framework */,
 				D28CF44E5CEBF6947E889711 /* libPods-CDDStoreDemo.a */,
 			);
 			name = Frameworks;
@@ -2919,7 +2955,10 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TZImagePickerController.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3330,6 +3369,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = KPZB7A4HR4;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = CDDStoreDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CDDStoreDemo/Info.plist;
@@ -3348,6 +3388,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = KPZB7A4HR4;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = CDDStoreDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CDDStoreDemo/Info.plist;
