@@ -18,7 +18,8 @@
 #import "UIImageView+WebCache.h"
 
 #import "DCNewFeatureViewController.h"
-#import <EMSDK.h>
+//#import <EMSDK.h>
+//#import <Hyphenate/Hyphenate.h>
 
 @interface AppDelegate ()
 
@@ -43,21 +44,24 @@
     
     [self setUpFixiOS11]; //适配IOS 11
     
-    [self setupHUanXin];
+//    [self setupHuanXin];
     
     return YES;
 }
 
 //设置环信
--(void)setupHUanXin{
+-(void)setupHuanXin{
      // 环信
     //AppKey:注册的AppKey，详细见下面注释。
     //apnsCertName:推送证书名（不需要加后缀），详细见下面注释。
 //    EMOptions *options = [EMOptions optionsWithAppkey:@"110108007702#xingnltest"];
 //    //options.apnsCertName = @"istore_dev";
 //    [[EMClient sharedClient] initializeSDKWithOptions:options];
-    EMOptions * options = [EMOptions optionsWithAppkey:@"1128180412146140#kuailiao"];
-    [[EMClient sharedClient] initializeSDKWithOptions:options];
+    
+    
+    
+//    EMOptions * options = [EMOptions optionsWithAppkey:@"1128180412146140#kuailiao"];
+//    [[EMClient sharedClient] initializeSDKWithOptions:options];
     
     
  
@@ -105,7 +109,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     
 //环信
-    [[EMClient sharedClient]applicationDidEnterBackground:application];
+//    [[EMClient sharedClient]applicationDidEnterBackground:application];
     
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
@@ -115,7 +119,9 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     
   
-    [[EMClient sharedClient] applicationWillEnterForeground:application];
+//    [[EMClient sharedClient] applicationWillEnterForeground:application];
+    
+    
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
 }
 
