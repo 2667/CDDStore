@@ -35,6 +35,9 @@ typedef enum : NSUInteger {
 /* 按钮 */
 @property (strong , nonatomic)UIButton *rightButton;
 
+/* 顶部分隔线 */
+@property (strong , nonatomic)UIView *topFenGeView;
+
 /**
  数据
  

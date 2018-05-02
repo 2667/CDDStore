@@ -78,11 +78,13 @@
 
 #define GoodsFooterImagesArray @[@"http://gfs5.gomein.net.cn/T1vpK_BCZT1RCvBVdK.jpg",@"http://gfs9.gomein.net.cn/T1cGK_BCZT1RCvBVdK.jpg",@"http://gfs6.gomein.net.cn/T1Kod_BCxT1RCvBVdK.jpg"]
 
-#define GoodsNewWelfareImagesArray @[@"http://gfs6.gomein.net.cn/T1.iJvBXVT1RCvBVdK.jpg",@"http://gfs5.gomein.net.cn/T10_LvBjLv1RCvBVdK.jpg",@"http://gfs9.gomein.net.cn/T1ALVvBXZg1RCvBVdK.jpg"]
+//#define GoodsNewWelfareImagesArray @[@"http://gfs6.gomein.net.cn/T1.iJvBXVT1RCvBVdK.jpg",@"http://gfs5.gomein.net.cn/T10_LvBjLv1RCvBVdK.jpg",@"http://gfs9.gomein.net.cn/T1ALVvBXZg1RCvBVdK.jpg"]
 
+#define GoodsNewWelfareImagesArray @[@"http://gfs6.gomein.net.cn/T1.iJvBXVT1RCvBVdK.jpg",@"http://gfs5.gomein.net.cn/T10_LvBjLv1RCvBVdK.jpg",@"http://gfs9.gomein.net.cn/T1ALVvBXZg1RCvBVdK.jpg",@"http://gfs5.gomein.net.cn/T10_LvBjLv1RCvBVdK.jpg"]
 
 #define BeastBeautyShopArray @[@"http://gfs7.gomein.net.cn/T1xp_sB7KT1RCvBVdK.jpg",@"http://gfs5.gomein.net.cn/T1Ao_sB7VT1RCvBVdK.jpg",@"http://gfs5.gomein.net.cn/T12md_B7YT1RCvBVdK.jpg"]
 
+//手机潮品 嗨购不停那个广告
 #define HomeBottomViewGIFImage @"http://gfs8.gomein.net.cn/T1RbW_BmdT1RCvBVdK.gif"
 
 //URL

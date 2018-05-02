@@ -65,7 +65,9 @@
 {
     if (!_leftImageView) {
         _leftImageView = [[UIImageView alloc] init];
-        _leftImageView.contentMode = UIViewContentModeCenter;
+//        _leftImageView.contentMode = UIViewContentModeCenter;
+        _leftImageView.contentMode = UIViewContentModeScaleAspectFit;
+        
         [self addSubview:_leftImageView];
     }
     return _leftImageView;
@@ -81,6 +83,20 @@
         [self addSubview:_rightButton];
     }
     return _rightButton;
+}
+//顶部灰色分割线
+-(UIView *)topFenGeView{
+    if (!_topFenGeView) {
+        _topFenGeView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, RollingViewWidth, 0.5)];
+//        _topFenGeView.adjustsImageWhenHighlighted = NO;
+//        [_topFenGeView setTitleColor:[UIColor darkGrayColor] forState:0];
+//        self.rightButton.frame = CGRectMake(RollingViewWidth * 0.8, RollingViewHeight * 0.1, RollingViewWidth * 0.18, RollingViewHeight * 0.8);
+        _topFenGeView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        [self addSubview:_topFenGeView];
+    }
+    return _topFenGeView;
+    
+    
 }
 
 - (NSMutableArray *)saveMiddleArray
@@ -120,11 +136,15 @@
             self.rightImages = rightImages;
             self.interval = (interval == 0 || interval > 100) ? 5.0 : interval; //限定定时不大于100秒
             self.rollingTime = (rollingTime <= 0.1  || rollingTime > 1) ? 0.5 : rollingTime; //限定翻滚时间不能大于1秒
+            
+            //主要看初始化时有无传值过来
+            rightbuttonTitle = @"更多";
             self.rightbuttonTitle = rightbuttonTitle;
+            
+            
             self.titleFont = (titleFont == 0) ? 13 : titleFont;
             self.titleColor = (titleColor == nil) ? [UIColor blackColor] : titleColor;
             self.isShowTagBorder = isShowTagBorder;
-            
             
             if (self.rolTags.count == 0 && self.rolTitles.count == 0) return 0; //若数组为0直接返回
             if (_rollingGroupStyle == CDDRollingTwoGroup) {
@@ -134,6 +154,7 @@
             }else{
                 
                 [self setUpOneGroupRollingUI]; //UI
+                
             }
         };
         
@@ -150,7 +171,8 @@
     [self setUpRollingCenter];
     
     [self setUpRollingRight];
-
+    //懒加载设置分割线view
+    self.topFenGeView;
 }
 
 #pragma mark - 界面搭建【CDDRollingTwoGroup】
@@ -159,6 +181,8 @@
     [self setUpRollingLeft];
     
     [self setUpRollingCenterRight];
+    
+    
 }
 
 #pragma mark - 左边图片
@@ -166,7 +190,8 @@
 {
     if (self.leftImage == nil)return;
 
-    self.leftImageView.frame = CGRectMake(0, RollingViewHeight * 0.1, RollingViewHeight * 1.5, RollingViewHeight * 0.8);
+//    self.leftImageView.frame = CGRectMake(0, RollingViewHeight * 0.1, RollingViewHeight * 1.5, RollingViewHeight * 0.8);
+     self.leftImageView.frame = CGRectMake(0, RollingViewHeight * 0.1, RollingViewHeight * 0.8, RollingViewHeight * 0.8);
     self.leftImageView.image = [UIImage imageNamed:self.leftImage];
     
 }
@@ -305,17 +330,26 @@
 #pragma mark - 右边按钮
 - (void)setUpRollingRight
 {
+    
     if (self.rightbuttonTitle == nil) return;
     
     self.rightButton.frame = CGRectMake(RollingViewWidth * 0.8, RollingViewHeight * 0.1, RollingViewWidth * 0.18, RollingViewHeight * 0.8);
     [self.rightButton setTitle:self.rightbuttonTitle forState:0];
     self.rightButton.titleLabel.font = [UIFont systemFontOfSize:self.titleFont + 0.5];
     
+    UIImageView *rightJianTou = [[UIImageView alloc]initWithFrame:CGRectMake(RollingViewWidth * 0.18-15, (RollingViewHeight * 0.8-15)/2, 15, 15)];
+    rightJianTou.image = [UIImage imageNamed:@"icon_voice_search"];
+//    CGFloat yyy = self.rightButton.center.y;
+//    rightJianTou.center = CGPointMake(rightJianTou.center.x, yyy);
+    
+    [self.rightButton addSubview:rightJianTou];
+    
     [self.rightButton addTarget:self action:@selector(rightMoreButtonClick) forControlEvents:UIControlEventTouchUpInside];
     
     UIView *btnLine = [UIView new];
-    btnLine.backgroundColor = [UIColor darkGrayColor];
-    btnLine.frame = CGRectMake(RollingViewWidth * 0.82, RollingViewHeight * 0.35, 1.5, RollingViewHeight * 0.3);
+    btnLine.backgroundColor = [UIColor groupTableViewBackgroundColor];
+//    btnLine.frame = CGRectMake(RollingViewWidth * 0.82, RollingViewHeight * 0.35, 1.5, RollingViewHeight * 0.3);
+      btnLine.frame = CGRectMake(RollingViewWidth * 0.82, RollingViewHeight * 0.1, 0.5, RollingViewHeight * 0.7);
     [self addSubview:btnLine];
 }
 

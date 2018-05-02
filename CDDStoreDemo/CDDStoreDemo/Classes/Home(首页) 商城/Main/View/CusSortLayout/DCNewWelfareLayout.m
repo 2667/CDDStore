@@ -38,6 +38,7 @@
 {
     NSMutableArray *attributesArray = [NSMutableArray array];
     NSInteger sectionCount = [self.collectionView numberOfSections];
+    NSLog(@"sectionCount内容是%ld",sectionCount);
     for (int i = 0; i < sectionCount; i++) { //遍历
         //sectionHeader
         NSIndexPath *indexPath = [NSIndexPath indexPathWithIndex:i];
@@ -113,7 +114,8 @@
 #pragma mark - 自定义第一组section
 - (void)layoutAttributesForCustomOneLayout:(UICollectionViewLayoutAttributes *)layoutAttributes indexPath: (NSIndexPath *) indexPath {
     
-    if (indexPath.item > 3)return;
+//    if (indexPath.item > 3)return;
+    if (indexPath.item > 4)return;
     CGFloat itemY = self.overallHeight;
 
     CGFloat itemH = 85;
@@ -127,7 +129,13 @@
             break;
         case 2:
             self.overallHeight += itemH;
-            layoutAttributes.frame = CGRectMake(0, itemH, ScreenW, itemH);
+            layoutAttributes.frame = CGRectMake(0, itemH, ScreenW/2, itemH);
+//            self.overallHeight += itemH;
+            break;
+            //bin add
+        case 3:
+//            self.overallHeight += itemH;
+            layoutAttributes.frame = CGRectMake(itemW, itemH, itemW, itemH);
             self.overallHeight += itemH;
             break;
         default:

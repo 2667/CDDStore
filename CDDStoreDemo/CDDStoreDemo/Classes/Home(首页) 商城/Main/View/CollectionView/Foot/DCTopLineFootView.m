@@ -6,6 +6,8 @@
 //  Copyright © 2017年 RocketsChen. All rights reserved.
 //
 
+#define bottomTouTiaoHeight 70
+
 #import "DCTopLineFootView.h"
 
 // Controllers
@@ -51,12 +53,16 @@
 {
     
     _topAdImageView = [[UIImageView alloc] init];
+    //_topAdImageView是 手机潮品 嗨购不停那个广告
     [_topAdImageView sd_setImageWithURL:[NSURL URLWithString:HomeBottomViewGIFImage]];
     _topAdImageView.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:_topAdImageView];
 
+//      _numericalScrollView = [[DCTitleRolling alloc] initWithFrame:CGRectMake(0, self.dc_height - 50, self.dc_width, 50) WithTitleData:^(CDDRollingGroupStyle *rollingGroupStyle, NSString *__autoreleasing *leftImage, NSArray *__autoreleasing *rolTitles, NSArray *__autoreleasing *rolTags, NSArray *__autoreleasing *rightImages, NSString *__autoreleasing *rightbuttonTitle, NSInteger *interval, float *rollingTime, NSInteger *titleFont, UIColor *__autoreleasing *titleColor, BOOL *isShowTagBorder) {
+    
     //初始化
-    _numericalScrollView = [[DCTitleRolling alloc] initWithFrame:CGRectMake(0, self.dc_height - 50, self.dc_width, 50) WithTitleData:^(CDDRollingGroupStyle *rollingGroupStyle, NSString *__autoreleasing *leftImage, NSArray *__autoreleasing *rolTitles, NSArray *__autoreleasing *rolTags, NSArray *__autoreleasing *rightImages, NSString *__autoreleasing *rightbuttonTitle, NSInteger *interval, float *rollingTime, NSInteger *titleFont, UIColor *__autoreleasing *titleColor, BOOL *isShowTagBorder) {
+    //底部50高度的滚动广告view
+    _numericalScrollView = [[DCTitleRolling alloc] initWithFrame:CGRectMake(0, self.dc_height - bottomTouTiaoHeight, self.dc_width, bottomTouTiaoHeight) WithTitleData:^(CDDRollingGroupStyle *rollingGroupStyle, NSString *__autoreleasing *leftImage, NSArray *__autoreleasing *rolTitles, NSArray *__autoreleasing *rolTags, NSArray *__autoreleasing *rightImages, NSString *__autoreleasing *rightbuttonTitle, NSInteger *interval, float *rollingTime, NSInteger *titleFont, UIColor *__autoreleasing *titleColor, BOOL *isShowTagBorder) {
         
         *rollingTime = 0.25;
         *rolTags = @[@"冬季健康日",@"新手上路",@"年终内购会",@"GitHub星星走一波"];
@@ -67,7 +73,7 @@
         *isShowTagBorder = YES;
         *titleColor = [UIColor darkGrayColor];
     }];
-    
+    //点击"更多"按钮
     _numericalScrollView.moreClickBlock = ^{
         NSLog(@"mall----more");
     };
@@ -90,7 +96,8 @@
         make.left.mas_equalTo(self);
         make.top.mas_equalTo(self);
         make.width.mas_equalTo(self);
-        [make.bottom.mas_equalTo(self)setOffset:-50];
+//        [make.bottom.mas_equalTo(self)setOffset:-50];
+        [make.bottom.mas_equalTo(self)setOffset:-bottomTouTiaoHeight];
     }];
 }
 

@@ -63,7 +63,8 @@ static NSString *const DCGoodsHandheldCellID = @"DCGoodsHandheldCell";
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 3;
+//    return 3;
+    return 4;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

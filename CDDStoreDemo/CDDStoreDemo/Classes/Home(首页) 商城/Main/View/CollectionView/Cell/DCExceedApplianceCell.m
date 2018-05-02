@@ -69,7 +69,7 @@ static NSString *const DCGoodsHandheldCellID = @"DCGoodsHandheldCell";
 {
     self.backgroundColor = [UIColor whiteColor];
     self.collectionView.backgroundColor = self.backgroundColor;
-    
+    //上面的那个cell,用一张_headImageView来显示
     _headImageView = [[UIImageView alloc] init];
     [self addSubview:_headImageView];
 }
@@ -81,6 +81,7 @@ static NSString *const DCGoodsHandheldCellID = @"DCGoodsHandheldCell";
         make.top.mas_equalTo(self);
         make.left.mas_equalTo(self);
         make.width.mas_equalTo(self);
+        //上面的那个imageview的高度
         make.height.mas_equalTo(ScreenW * 0.32);
     }];
 }

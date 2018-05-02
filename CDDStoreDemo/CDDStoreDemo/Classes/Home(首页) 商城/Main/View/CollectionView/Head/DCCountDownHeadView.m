@@ -29,7 +29,7 @@
 /* 倒计时 */
 @property (strong , nonatomic)UILabel *countDownLabel;
 
-/* 好货秒抢 */
+/* 更多 */
 @property (strong , nonatomic)DCZuoWenRightButton *quickButton;
 @end
 
@@ -54,7 +54,9 @@
     [self addSubview:_redView];
     
     _timeLabel = [[UILabel alloc] init];
-    _timeLabel.text = @"6点场";
+    _timeLabel.text = @"限时秒杀";
+//    _timeLabel.backgroundColor = [UIColor redColor];
+    _timeLabel.textAlignment =NSTextAlignmentCenter;
     _timeLabel.font = PFR16Font;
     [self addSubview:_timeLabel];
     
@@ -66,10 +68,17 @@
     
     _quickButton = [DCZuoWenRightButton buttonWithType:UIButtonTypeCustom];
     _quickButton.titleLabel.font = PFR12Font;
+//    _quickButton.titleLabel.font = PFR20Font;
     [_quickButton setImage:[UIImage imageNamed:@"shouye_icon_jiantou"] forState:UIControlStateNormal];
     [_quickButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-    [_quickButton setTitle:@"好货秒抢" forState:UIControlStateNormal];
+    [_quickButton setTitle:@"更多" forState:UIControlStateNormal];
     [self addSubview:_quickButton];
+    
+    //底部分割线view
+    CGFloat heightFenGeView = 0.5;
+    UIView *fenGeView = [[UIView alloc]initWithFrame:CGRectMake(0, self.dc_height-heightFenGeView, self.dc_width, heightFenGeView)];
+    fenGeView.backgroundColor = [UIColor lightGrayColor];
+     [self addSubview:fenGeView];
 
 }
 
@@ -78,10 +87,12 @@
 {
     [super layoutSubviews];
     
-    _redView.frame = CGRectMake(0, 10, 8, 20);
-    _timeLabel.frame = CGRectMake(20, 0, 60, self.dc_height);
+//    _redView.frame = CGRectMake(0, 10, 8, 20);
+     _redView.frame = CGRectMake(0, 0, 0, 0);
+    _timeLabel.frame = CGRectMake(0, 0, 80, self.dc_height);
     _countDownLabel.frame = CGRectMake(CGRectGetMaxX(_timeLabel.frame), 0, 100, self.dc_height);
-    _quickButton.frame = CGRectMake(self.dc_width - 70, 0, 70, self.dc_height);
+//    _quickButton.frame = CGRectMake(self.dc_width - 70, 0, 70, self.dc_height);
+     _quickButton.frame = CGRectMake(self.dc_width - 50, 0, 40, self.dc_height);
 }
 
 

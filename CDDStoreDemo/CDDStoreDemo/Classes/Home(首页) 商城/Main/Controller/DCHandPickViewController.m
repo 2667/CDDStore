@@ -105,7 +105,7 @@ static NSString *const DCScrollAdFootViewID = @"DCScrollAdFootView";
         //新福利
         [_collectionView registerClass:[DCNewWelfareCell class] forCellWithReuseIdentifier:DCNewWelfareCellID];
         
-//        顶部foot线
+//        顶部foot线, 手机潮品 嗨购不停那个广告和下面的国美头条广告
         [_collectionView registerClass:[DCTopLineFootView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:DCTopLineFootViewID];
 //         结束footview
         [_collectionView registerClass:[DCOverFootView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:DCOverFootViewID];
@@ -115,7 +115,7 @@ static NSString *const DCScrollAdFootViewID = @"DCScrollAdFootView";
         [_collectionView registerClass:[DCYouLikeHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:DCYouLikeHeadViewID];
 //        幻灯展示HeadView
         [_collectionView registerClass:[DCSlideshowHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:DCSlideshowHeadViewID];
-        //下面统计headview
+        //下面统计headview   限时秒杀那个headview
         [_collectionView registerClass:[DCCountDownHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:DCCountDownHeadViewID];
         
         [self.view addSubview:_collectionView];
@@ -254,15 +254,17 @@ static NSString *const DCScrollAdFootViewID = @"DCScrollAdFootView";
         cell.backgroundColor = [UIColor whiteColor];
         gridcell = cell;
         
-    }else if (indexPath.section == 1) {//广告福利
+    }else if (indexPath.section == 1) {
+        //广告福利 商城热点/国美头条下面的4个cell
         DCNewWelfareCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DCNewWelfareCellID forIndexPath:indexPath];
         gridcell = cell;
     }
-    else if (indexPath.section == 2) {//倒计时
+    else if (indexPath.section == 2) {//倒计时  限时秒杀
         DCGoodsCountDownCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DCGoodsCountDownCellID forIndexPath:indexPath];
         gridcell = cell;
     }
-    else if (indexPath.section == 3) {//掌上专享
+    else if (indexPath.section == 3) {//掌上专享 尖货峰慧/冬季洁净行 品牌狂欢购
+        //1个上面的cell 加6个下面的cell
         DCExceedApplianceCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DCExceedApplianceCellID forIndexPath:indexPath];
         cell.goodExceedArray = GoodsRecommendArray;
         gridcell = cell;
@@ -337,8 +339,9 @@ static NSString *const DCScrollAdFootViewID = @"DCScrollAdFootView";
     if (indexPath.section == 2) {//计时
         return CGSizeMake(ScreenW, 150);
     }
-    if (indexPath.section == 3) {//掌上
-        return CGSizeMake(ScreenW,ScreenW * 0.35 + 120);
+    if (indexPath.section == 3) {//掌上 尖货峰慧
+//        return CGSizeMake(ScreenW,ScreenW * 0.35 + 120);
+          return CGSizeMake(ScreenW,ScreenW * 0.35 + 200);
     }
     if (indexPath.section == 4) {//推荐组
         return [self layoutAttributesForItemAtIndexPath:indexPath].size;
@@ -369,8 +372,14 @@ static NSString *const DCScrollAdFootViewID = @"DCScrollAdFootView";
     if (section == 0) {
         return CGSizeMake(ScreenW, 230); //图片滚动的宽高
     }
-    if (section == 2 || section == 4 || section == 5) {//猜你喜欢的宽高
+    if (section == 4 || section == 5) {//猜你喜欢的宽高
         return CGSizeMake(ScreenW, 40);  //推荐适合的宽高
+    }
+    
+    if (section == 2) {
+        //限时秒杀的宽高
+        return CGSizeMake(ScreenW, 75);
+        
     }
     return CGSizeZero;
 }
@@ -378,7 +387,9 @@ static NSString *const DCScrollAdFootViewID = @"DCScrollAdFootView";
 #pragma mark - foot宽高
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
     if (section == 0) {
+        //显示手机潮品嗨购不停的那一行
         return CGSizeMake(ScreenW, 180);  //Top头条的宽高
+//        return CGSizeMake(ScreenW, 90);
     }
     if (section == 3) {
         return CGSizeMake(ScreenW, 80); // 滚动广告
