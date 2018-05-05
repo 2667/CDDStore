@@ -42,6 +42,7 @@
     _likeImageView = [[UIImageView alloc] init];
     _likeImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self addSubview:_likeImageView];
+    
 }
 
 - (void)layoutSubviews

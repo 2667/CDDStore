@@ -81,6 +81,7 @@
 #pragma mark - 添加子控制器
 - (void)addDcChildViewContorller
 {
+    /*
     NSArray *childArray = @[
                             @{MallClassKey  : @"DCBeautyMessageViewController",
                               MallTitleKey  : @"美信",
@@ -108,6 +109,40 @@
                               MallSelImgKey : @"tabr_05_down"},
                             
                             ];
+    
+   */
+    
+    NSArray *childArray = @[
+                            
+                            
+                            @{MallClassKey  : @"DCHandPickViewController",
+                              MallTitleKey  : @"首页",
+                              MallImgKey    : @"tabr_02_up",
+                              MallSelImgKey : @"tabr_02_down"},
+                            
+                            @{MallClassKey  : @"DCBeautyMessageViewController",
+                              MallTitleKey  : @"分类",
+                              MallImgKey    : @"tabr_01_up",
+                              MallSelImgKey : @"tabr_01_down"},
+                            
+                            @{MallClassKey  : @"DCMediaListViewController",
+                              MallTitleKey  : @"搜索",
+                              MallImgKey    : @"tabr_03_up",
+                              MallSelImgKey : @"tabr_03_down"},
+                            
+                            @{MallClassKey  : @"DCBeautyShopViewController",
+                              MallTitleKey  : @"购物车",
+                              MallImgKey    : @"tabr_04_up",
+                              MallSelImgKey : @"tabr_04_down"},
+                            
+                            @{MallClassKey  : @"DCMyCenterViewController",
+                              MallTitleKey  : @"个人中心",
+                              MallImgKey    : @"tabr_05_up",
+                              MallSelImgKey : @"tabr_05_down"},
+                            
+                            ];
+    
+    
     [childArray enumerateObjectsUsingBlock:^(NSDictionary *dict, NSUInteger idx, BOOL * _Nonnull stop) {
         
         UIViewController *vc = [NSClassFromString(dict[MallClassKey]) new];
@@ -118,7 +153,8 @@
         item.imageInsets = UIEdgeInsetsMake(6, 0,-6, 0);//（当只有图片的时候）需要自动调整
         [self addChildViewController:nav];
         WEAKSELF
-        if ([dict[MallTitleKey] isEqualToString:@"美信"]) {
+//        if ([dict[MallTitleKey] isEqualToString:@"美信"]) {
+        if ([dict[MallTitleKey] isEqualToString:@"分类"]) {
             weakSelf.beautyMsgVc = (DCBeautyMessageViewController *)vc; //给美信赋值
         }
         

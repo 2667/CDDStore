@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="youhuiCellID" id="gTV-IL-0wX" customClass="YouHuiCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="346" height="228"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="346" height="228"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Details_Btn_Up" translatesAutoresizingMaskIntoConstraints="NO" id="esB-Tg-Cm6" userLabel="topImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="346" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="kkP-qC-3p8"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BZFK_newdianhua" translatesAutoresizingMaskIntoConstraints="NO" id="wi5-rq-nt9" userLabel="leftImage View">
+                        <rect key="frame" x="0.0" y="100" width="173" height="128"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BZFK_newdianhua" translatesAutoresizingMaskIntoConstraints="NO" id="0vb-1S-FN5" userLabel="downTopImage View">
+                        <rect key="frame" x="173" y="100" width="173" height="64"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Address_shanchu" translatesAutoresizingMaskIntoConstraints="NO" id="Ri1-1w-fTi" userLabel="downdownImage View">
+                        <rect key="frame" x="173" y="164" width="173" height="64"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Ri1-1w-fTi" firstAttribute="width" secondItem="0vb-1S-FN5" secondAttribute="width" id="0ss-Pm-ByX"/>
+                <constraint firstItem="wi5-rq-nt9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1Nx-PD-8IF"/>
+                <constraint firstItem="0vb-1S-FN5" firstAttribute="leading" secondItem="wi5-rq-nt9" secondAttribute="trailing" id="6gQ-Jy-fHu"/>
+                <constraint firstAttribute="bottom" secondItem="Ri1-1w-fTi" secondAttribute="bottom" id="K0P-uz-Z3o"/>
+                <constraint firstAttribute="trailing" secondItem="0vb-1S-FN5" secondAttribute="trailing" id="LRR-s5-23K"/>
+                <constraint firstItem="wi5-rq-nt9" firstAttribute="top" secondItem="esB-Tg-Cm6" secondAttribute="bottom" id="MhR-I8-FDX"/>
+                <constraint firstItem="wi5-rq-nt9" firstAttribute="width" secondItem="0vb-1S-FN5" secondAttribute="width" id="UaJ-2I-kNd"/>
+                <constraint firstAttribute="trailing" secondItem="esB-Tg-Cm6" secondAttribute="trailing" id="YVy-mi-phl"/>
+                <constraint firstItem="esB-Tg-Cm6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bbf-Vl-N1c"/>
+                <constraint firstItem="0vb-1S-FN5" firstAttribute="top" secondItem="esB-Tg-Cm6" secondAttribute="bottom" id="cYR-OV-sio"/>
+                <constraint firstItem="Ri1-1w-fTi" firstAttribute="height" secondItem="0vb-1S-FN5" secondAttribute="height" id="nCB-jC-ss8"/>
+                <constraint firstAttribute="trailing" secondItem="Ri1-1w-fTi" secondAttribute="trailing" id="pGl-N6-zHU"/>
+                <constraint firstAttribute="bottom" secondItem="wi5-rq-nt9" secondAttribute="bottom" id="qkZ-CJ-98Y"/>
+                <constraint firstItem="esB-Tg-Cm6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tmC-1v-Z7j"/>
+                <constraint firstItem="Ri1-1w-fTi" firstAttribute="top" secondItem="0vb-1S-FN5" secondAttribute="bottom" id="wAp-6a-9g8"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="346" height="228"/>
+            <connections>
+                <outlet property="downBottomImageView" destination="Ri1-1w-fTi" id="GVb-Ev-ZTe"/>
+                <outlet property="downTopImageView" destination="0vb-1S-FN5" id="HMo-Ou-rjH"/>
+                <outlet property="leftImageView" destination="wi5-rq-nt9" id="26r-sK-fwV"/>
+                <outlet property="topImageView" destination="esB-Tg-Cm6" id="vGf-JA-Zrc"/>
+            </connections>
+            <point key="canvasLocation" x="6" y="80"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Address_shanchu" width="12" height="12"/>
+        <image name="BZFK_newdianhua" width="24" height="24"/>
+        <image name="Details_Btn_Up" width="12" height="12"/>
+    </resources>
+</document>

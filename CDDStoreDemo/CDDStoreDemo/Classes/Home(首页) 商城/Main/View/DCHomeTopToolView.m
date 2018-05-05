@@ -139,15 +139,21 @@
 {
     [super layoutSubviews];
     [_leftItemButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mas_top).offset(20);
-        make.left.equalTo(self.mas_left).offset(0);
+        if (KIsiPhoneX) {
+make.top.equalTo(self.mas_top).offset(44);
+        }else{
+ make.top.equalTo(self.mas_top).offset(20);
+        }
+        
+make.left.equalTo(self.mas_left).offset(0);
         make.height.equalTo(@44);
         make.width.equalTo(@44);
+        
     }];
     
     [_rightItemButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_leftItemButton.mas_centerY);
-        make.right.equalTo(self.mas_right).offset(-0);
+  make.centerY.equalTo(_leftItemButton.mas_centerY);
+ make.right.equalTo(self.mas_right).offset(-0);
         make.height.equalTo(@44);
         make.width.equalTo(@44);
     }];

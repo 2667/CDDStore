@@ -71,10 +71,12 @@
 - (void)setUpRootVC
 {
     if ([BUNDLE_VERSION isEqualToString:[DCAppVersionTool dc_GetLastOneAppVersion]]) {//判断是否当前版本号等于上一次储存版本号
+        //不是首次安装则进入APP主页
 
         self.window.rootViewController = [[DCTabBarController alloc] init];
-    }else{
         
+    }else{
+        //首次安装则进入广告引导页面
         [DCAppVersionTool dc_SaveNewAppVersion:BUNDLE_VERSION]; //储存当前版本号
 
         // 设置窗口的根控制器

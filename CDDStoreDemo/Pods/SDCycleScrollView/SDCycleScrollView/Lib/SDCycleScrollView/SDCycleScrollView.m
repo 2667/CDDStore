@@ -183,6 +183,7 @@ NSString * const ID = @"cycleCell";
     _pageControl.hidden = !showPageControl;
 }
 
+/** 当前分页控件小圆标颜色 */
 - (void)setCurrentPageDotColor:(UIColor *)currentPageDotColor
 {
     _currentPageDotColor = currentPageDotColor;

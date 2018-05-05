@@ -158,5 +158,31 @@
 		<key>stock</key>
 		<integer>2131</integer>
 	</dict>
+	<dict>
+		<key>images</key>
+		<array>
+			<string>http://gfs11.gomein.net.cn/T19kCvB4ET1RCvBVdK_800.jpg</string>
+			<string>http://gfs13.gomein.net.cn/T1CkDvBXLv1RCvBVdK_800.jpg</string>
+			<string>http://gfs11.gomein.net.cn/T19kCvB4ET1RCvBVdK_800.jpg</string>
+		</array>
+		<key>goods_address</key>
+		<string>江苏 苏州</string>
+		<key>sale_count</key>
+		<string>12312</string>
+		<key>expressage</key>
+		<string>10</string>
+		<key>goods_title</key>
+		<string>华米手机</string>
+		<key>image_url</key>
+		<string>http://gfs17.gomein.net.cn/T1cRbvBmWv1RCvBVdK_400.jpg</string>
+		<key>price</key>
+		<real>8518</real>
+		<key>sales</key>
+		<integer>686</integer>
+		<key>main_title</key>
+		<string>华米（HUAMI）华米V7 全网通 （5.7英寸FHD）</string>
+		<key>stock</key>
+		<real>2618</real>
+	</dict>
 </array>
 </plist>

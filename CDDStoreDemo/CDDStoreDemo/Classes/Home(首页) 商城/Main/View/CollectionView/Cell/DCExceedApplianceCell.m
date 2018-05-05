@@ -40,11 +40,12 @@ static NSString *const DCGoodsHandheldCellID = @"DCGoodsHandheldCell";
 {
     if (!_collectionView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-        layout.itemSize = CGSizeMake(100, 100);
+//        layout.itemSize = CGSizeMake(100, 100);
+         layout.itemSize = CGSizeMake(100, 200);
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         [self addSubview:_collectionView];
-        _collectionView.frame = CGRectMake(0, ScreenW * 0.35 + DCMargin, ScreenW, 100);
+        _collectionView.frame = CGRectMake(0, ScreenW * 0.35 + DCMargin, ScreenW, 200);
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
@@ -82,7 +83,8 @@ static NSString *const DCGoodsHandheldCellID = @"DCGoodsHandheldCell";
         make.left.mas_equalTo(self);
         make.width.mas_equalTo(self);
         //上面的那个imageview的高度
-        make.height.mas_equalTo(ScreenW * 0.32);
+//        make.height.mas_equalTo(ScreenW * 0.32);
+        make.height.mas_equalTo(ScreenW * 0.35);
     }];
 }
 
