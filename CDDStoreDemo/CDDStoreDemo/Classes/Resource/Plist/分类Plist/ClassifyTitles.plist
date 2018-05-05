@@ -74,5 +74,35 @@
 		<key>title</key>
 		<string>运动户外</string>
 	</dict>
+	<dict>
+		<key>fileName</key>
+		<string>ClassiftyGoods03.plist</string>
+		<key>title</key>
+		<string>食品酒水</string>
+	</dict>
+	<dict>
+		<key>fileName</key>
+		<string>ClassiftyGoods01.plist</string>
+		<key>title</key>
+		<string>保健器械</string>
+	</dict>
+	<dict>
+		<key>fileName</key>
+		<string>ClassiftyGoods02.plist</string>
+		<key>title</key>
+		<string>营养滋补</string>
+	</dict>
+	<dict>
+		<key>fileName</key>
+		<string>ClassiftyGoods03.plist</string>
+		<key>title</key>
+		<string>礼品卡卷</string>
+	</dict>
+	<dict>
+		<key>fileName</key>
+		<string>ClassiftyGoods01.plist</string>
+		<key>title</key>
+		<string>通用积分</string>
+	</dict>
 </array>
 </plist>

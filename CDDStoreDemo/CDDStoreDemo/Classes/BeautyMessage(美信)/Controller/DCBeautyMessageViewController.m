@@ -42,7 +42,16 @@ static NSString *const DCBeautyMsgCellID = @"DCBeautyMsgCell";
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.frame = CGRectMake(0, 0, ScreenW, ScreenH - DCBottomTabH);
+        
+        if (KIsiPhoneX) {
+            //状态栏加导航栏的高度68
+            _tableView.frame = CGRectMake(0, 24+44, ScreenW, ScreenH - DCBottomTabH);
+
+        }else{
+            
+                _tableView.frame = CGRectMake(0, 0, ScreenW, ScreenH - DCBottomTabH);
+            
+        }
     
         [self.view addSubview:_tableView];
         

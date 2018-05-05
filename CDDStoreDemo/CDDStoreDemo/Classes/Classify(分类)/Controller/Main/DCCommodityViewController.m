@@ -58,7 +58,15 @@ static NSString *const DCBrandSortCellID = @"DCBrandSortCell";
 {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.frame = CGRectMake(0, DCTopNavH, tableViewH, ScreenH - DCTopNavH);
+        if (KIsiPhoneX) {
+//            34是iphonex底部tabbar高出的高度
+           _tableView.frame = CGRectMake(0, DCTopNavH+24, tableViewH, ScreenH - DCTopNavH-24-34-DCBottomTabH);
+        }else{
+           _tableView.frame = CGRectMake(0, DCTopNavH, tableViewH, ScreenH - DCTopNavH-DCBottomTabH);
+            
+            
+        }
+        
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.showsVerticalScrollIndicator = NO;
@@ -82,7 +90,18 @@ static NSString *const DCBrandSortCellID = @"DCBrandSortCell";
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.alwaysBounceVertical = YES;
-        _collectionView.frame = CGRectMake(tableViewH + 5, DCTopNavH, ScreenW - tableViewH - DCMargin, ScreenH - DCTopNavH);
+        
+        if (KIsiPhoneX) {
+            //            34是iphonex底部tabbar高出的高度
+//            _tableView.frame = CGRectMake(0, DCTopNavH+24, tableViewH, ScreenH - DCTopNavH-24-34);
+            _collectionView.frame = CGRectMake(tableViewH + 5, DCTopNavH+24, ScreenW - tableViewH - DCMargin, ScreenH - DCTopNavH-24-34-DCBottomTabH);
+        }else{
+//            _tableView.frame = CGRectMake(0, DCTopNavH, tableViewH, ScreenH - DCTopNavH);
+            _collectionView.frame = CGRectMake(tableViewH + 5, DCTopNavH, ScreenW - tableViewH - DCMargin, ScreenH - DCTopNavH-DCBottomTabH);
+            
+        }
+        
+        
         //注册Cell
         [_collectionView registerClass:[DCGoodsSortCell class] forCellWithReuseIdentifier:DCGoodsSortCellID];
         [_collectionView registerClass:[DCBrandSortCell class] forCellWithReuseIdentifier:DCBrandSortCellID];
@@ -147,7 +166,7 @@ static NSString *const DCBrandSortCellID = @"DCBrandSortCell";
     self.navigationItem.titleView = _topSearchView;
     
     _searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_searchButton setTitle:@"搜索商品/店铺" forState:0];
+    [_searchButton setTitle:@"商品/店铺搜索" forState:0];
     [_searchButton setTitleColor:[UIColor lightGrayColor] forState:0];
     _searchButton.titleLabel.font = PFR13Font;
     [_searchButton setImage:[UIImage imageNamed:@"group_home_search_gray"] forState:0];

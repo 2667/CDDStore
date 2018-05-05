@@ -157,7 +157,7 @@ static NSString *const DCListGridCellID = @"DCListGridCell";
     self.navigationItem.titleView = _topSearchView;
     
     _searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_searchButton setTitle:@"搜索商品/店铺" forState:0];
+    [_searchButton setTitle:@"商品/店铺搜索" forState:0];
     [_searchButton setTitleColor:[UIColor lightGrayColor] forState:0];
     _searchButton.titleLabel.font = PFR13Font;
     [_searchButton setImage:[UIImage imageNamed:@"group_home_search_gray"] forState:0];

@@ -16,6 +16,7 @@
 
 // Views
 #import "DCTabBadgeView.h"
+#import "DCCommodityViewController.h"
 // Vendors
 
 // Categories
@@ -25,7 +26,9 @@
 @interface DCTabBarController ()<UITabBarControllerDelegate>
 
 //美信
-@property (nonatomic, weak) DCBeautyMessageViewController *beautyMsgVc;
+//@property (nonatomic, weak) DCBeautyMessageViewController *beautyMsgVc;
+//分类
+@property (nonatomic, weak) DCCommodityViewController *beautyMsgVc;
 
 @property (nonatomic, strong) NSMutableArray *tabBarItems;
 //给item加上badge
@@ -112,6 +115,8 @@
     
    */
     
+    
+//    tabaritem中用的是文字和图片在一起的图片,所以修改不了标题
     NSArray *childArray = @[
                             
                             
@@ -120,7 +125,7 @@
                               MallImgKey    : @"tabr_02_up",
                               MallSelImgKey : @"tabr_02_down"},
                             
-                            @{MallClassKey  : @"DCBeautyMessageViewController",
+                            @{MallClassKey  : @"DCCommodityViewController",
                               MallTitleKey  : @"分类",
                               MallImgKey    : @"tabr_01_up",
                               MallSelImgKey : @"tabr_01_down"},
@@ -155,7 +160,10 @@
         WEAKSELF
 //        if ([dict[MallTitleKey] isEqualToString:@"美信"]) {
         if ([dict[MallTitleKey] isEqualToString:@"分类"]) {
-            weakSelf.beautyMsgVc = (DCBeautyMessageViewController *)vc; //给美信赋值
+//            weakSelf.beautyMsgVc = (DCBeautyMessageViewController *)vc; //给美信赋值
+            weakSelf.beautyMsgVc = (DCCommodityViewController *)vc; //给美信赋值
+            
+            
         }
         
         // 添加tabBarItem至数组
@@ -181,11 +189,12 @@
 #pragma mark - <UITabBarControllerDelegate>
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
     //点击tabBarItem动画
-    [self tabBarButtonClick:[self getTabBarButton]];
-    if ([self.childViewControllers.firstObject isEqual:viewController]) { //根据tabBar的内存地址找到美信发通知jump
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"jump" object:nil];
-    }
+//    [self tabBarButtonClick:[self getTabBarButton]];
+//    if ([self.childViewControllers.firstObject isEqual:viewController]) { //根据tabBar的内存地址找到美信发通知jump
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"jump" object:nil];
+//    }
 
+    //屏蔽上述动画,以满足项目要求
 }
 - (UIControl *)getTabBarButton{
     NSMutableArray *tabBarButtons = [[NSMutableArray alloc]initWithCapacity:0];
@@ -236,7 +245,9 @@
     int i = 0;
     for (UITabBarItem *item in self.tabBarItems) {
         
-        if (i == 0) {  // 只在美信上添加
+//        if (i == 0) {  // 只在美信上添加
+        if (i == 1) {  // 只在美信上添加
+
             [self addBadgeViewWithBadgeValue:item.badgeValue atIndex:i];
             // 监听item的变化情况
             [item addObserver:self forKeyPath:@"badgeValue" options:NSKeyValueObservingOptionNew context:nil];
